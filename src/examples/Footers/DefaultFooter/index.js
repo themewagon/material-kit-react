@@ -26,6 +26,7 @@ import Grid from "@mui/material/Grid";
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
+import { Stack } from "@mui/material";
 
 function DefaultFooter({ content }) {
   const { brand, socials, menus, copyright } = content;
@@ -101,8 +102,28 @@ function DefaultFooter({ content }) {
               </MKBox>
             </Grid>
           ))}
-          <Grid item xs={12} sx={{ textAlign: "center", my: 3 }}>
-            {copyright}
+          <Grid item xs={12} sx={{ my: 3 }}>
+            <Stack
+              direction={{ md: "row" }}
+              justifyContent={{ xs: "center", md: "space-between" }}
+              alignItems="center"
+            >
+              {copyright}
+              <MKTypography variant="button" fontWeight="regular">
+                Distributed by{" "}
+                <MKTypography
+                  component="a"
+                  href="https://themewagon.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  variant="button"
+                  fontWeight="regular"
+                >
+                  Themewagon
+                </MKTypography>
+                .
+              </MKTypography>
+            </Stack>
           </Grid>
         </Grid>
       </Container>
